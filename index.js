@@ -17,9 +17,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: '*',
+    origin: true,
+    credentials: true,
     methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization,X-Requested-With'
+    allowedHeaders: '*'
 }));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
